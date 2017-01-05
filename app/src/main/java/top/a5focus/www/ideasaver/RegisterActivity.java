@@ -27,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         Toolbar toolbar=(Toolbar)findViewById(R.id.register_toolbar);
         toolbar.setTitle("用户注册");
+
         setSupportActionBar(toolbar);
 
         showdate=(TextView)findViewById(R.id.show_date);

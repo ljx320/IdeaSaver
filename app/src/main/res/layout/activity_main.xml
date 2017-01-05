@@ -43,7 +43,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-
+android:id="@+id/tel_text"
                 android:layout_height="wrap_content"
                 android:background="@drawable/eidt_bg"
                 android:hint="输入电话号码"
@@ -67,7 +67,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+android:id="@+id/password_text"
                 android:background="@drawable/eidt_bg"
                 android:hint="输入登陆密码"
                 android:inputType="textPassword"
@@ -121,10 +121,10 @@ android:layout_weight="1"
                 android:id="@+id/main_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#5292E2"
+
 
                 android:text="立即登陆"
-                android:textColor="#FFFFFF" />
+                 />
 
         </LinearLayout>
 

@@ -26,7 +26,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
-    compile files('libs/okhttp-3.5.0.jar')
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile files('libs/litepal-1.4.1.jar')
     compile 'com.google.code.gson:gson:2.7'
     compile files('libs/glide-3.7.0.jar')
