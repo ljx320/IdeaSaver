@@ -30,4 +30,7 @@ dependencies {
     compile files('libs/litepal-1.4.1.jar')
     compile 'com.google.code.gson:gson:2.7'
     compile files('libs/glide-3.7.0.jar')
+    compile 'com.android.support:design:25.1.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
 }

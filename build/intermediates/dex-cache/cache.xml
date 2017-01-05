@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6a5634ae66f985658a137287aa15f74aa8c2a862">
+        sha1="e954b2a68ec94dcc1de0d0234a948382739c0915">
         <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f54a307ca913452786e0706ecec158bed7707b27\classes.dex" />
     </item>
     <item
@@ -16,8 +16,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="8edff279895701b46a9c0526e510131727313848">
+        sha1="00c2bda45c981aa4003b4bd3f03affec28bbfe64">
         <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_26b00d6b15affddca9d13f0572a5ce685d384b91\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\design\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.0_3c786e247aebf91f56421a573b938185942689c0\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -30,21 +39,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.0_c72fe07de5a9976c663e221636bf15883c97bf60\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
         <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.0_03b88ef8f5448cccafe4468aa55011b32a857b39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.0_c72fe07de5a9976c663e221636bf15883c97bf60\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,6 +84,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.0_c35c18db764c613cc310339b1d5b96631526a12b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -99,6 +117,15 @@
         revision="25.0.2"
         sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
         <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.0_789d6b6d6f823bed513fea8e84b8b18153597e8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.0_19c7d417b2357af84f11190044f8c3e7a1411e97\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -138,6 +165,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_f5e54dca15436c45e667512ec38614568952d1e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\69133\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
         jumboMode="true"
         optimize="true"
@@ -147,12 +183,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jar="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_f5e54dca15436c45e667512ec38614568952d1e6\classes.dex" />
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="D:\MyProjects\AndroidApp\IdeaSaver\app\build\intermediates\transforms\dex\debug\folders\1000\10\de.hdodenhof-circleimageview-2.1.0_06df79c03c3ae2624cb4699a0f45cc2ce2e584e1\classes.dex" />
     </item>
     <item
         is-multidex="true"
