@@ -123,7 +123,7 @@ private  boolean registerResult;
                     return;
                 }
 
-                User user=new User();
+                final User user=new User();
                 user.setAvailable(1);
                 user.setBirthday(showdate.getText().toString());
                 user.setCreatTime("");
@@ -160,6 +160,8 @@ private  boolean registerResult;
                     @Override
                     public void onResponse(Call call, final Response response) throws IOException {
                         if (response.isSuccessful()){
+
+                            user.save();
                             String responseString=response.body().string();
                             registerResult=GsonUtil.handResponseBoolen(responseString);
 

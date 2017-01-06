@@ -17,6 +17,7 @@ public class Idea  extends DataSupport{
     private int UpdateCloud;
     private String CreateTime;
     private String CreateLocation;
+    private Project Project;
 
     public  void setID(int id){
         this.ID=id;
@@ -25,6 +26,16 @@ public class Idea  extends DataSupport{
     public  int getID(){
         return  ID;
 
+    }
+
+    public  Project getProject(){
+
+        return  this.Project;
+    }
+
+    public  void setProject(Project project){
+
+        this.Project=project;
     }
 
     public  void setIdeaTitle(String ideaTitle){

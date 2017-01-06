@@ -47,6 +47,7 @@ android:id="@+id/tel_text"
                 android:layout_height="wrap_content"
                 android:background="@drawable/eidt_bg"
                 android:hint="输入电话号码"
+                android:maxLines="1"
                 android:inputType="phone"
                 android:padding="5dp"
                 android:textSize="16dp"
@@ -65,6 +66,7 @@ android:id="@+id/tel_text"
 
 
             <EditText
+                android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 android:id="@+id/password_text"

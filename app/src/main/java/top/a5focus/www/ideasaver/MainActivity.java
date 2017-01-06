@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        pref= PreferenceManager.getDefaultSharedPreferences(this);
+        pref= getSharedPreferences("saverData",MODE_PRIVATE);
         boolean isRemember=pref.getBoolean("remember_password",false);
 
         if (isRemember){
@@ -122,13 +123,17 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
 
                                     if (user!=null){
-                                        editor=pref.edit();
+                                        editor=getSharedPreferences("saverData",MODE_PRIVATE).edit();
                                         if (rememberme.isChecked())
                                         {
+
+
 
                                             editor.putBoolean("remember_password",true);
                                             editor.putString("tel",user.getTel());
                                             editor.putString("password",user.getPassword());
+                                            editor.putString("username",user.getUserName());
+                                            editor.putString("userid",Integer.toString( user.getID()));
 
                                         }else
                                         {

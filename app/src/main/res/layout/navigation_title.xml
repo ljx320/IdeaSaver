@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:background="?attr/colorPrimary"
+    android:background="@drawable/ic_user_bg"
     android:padding="10dp">
 
    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/nav_user_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
         android:src="@drawable/ic_bg_user" />
 
@@ -16,8 +16,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:textColor="#FFF"
-    android:text="15069019354"
+
+
     android:textSize="14sp"
     android:id="@+id/nav_user_tel"
     />
@@ -25,10 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/nav_user_tel"
-        android:text="用户昵称"
-        android:textColor="#FFF"
+
+
         android:textSize="14sp"
         android:id="@+id/nav_user_username"
-        android:layout_marginBottom="5dp"
+
         />
 </RelativeLayout>

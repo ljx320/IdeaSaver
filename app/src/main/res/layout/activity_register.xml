@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/eidt_bg"
                 android:textSize="16dp"
+                android:maxLines="1"
                 android:hint="输入电话号码"
                 android:padding="5dp"
                 android:inputType="phone"
@@ -134,7 +135,7 @@
 
                 android:textSize="16dp"
                 android:hint="输入昵称"
-
+                android:maxLines="1"
                 android:background="@drawable/eidt_bg"
                 android:padding="5dp"
                 android:id="@+id/register_username"
@@ -155,7 +156,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:maxLines="1"
                 android:textSize="16dp"
                 android:hint="输入密码"
                 android:inputType="textPassword"
@@ -178,7 +179,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:maxLines="1"
                 android:textSize="16dp"
                 android:hint="确认密码"
                 android:inputType="textPassword"
