@@ -13,6 +13,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/welcome_img"
-    android:scaleType="centerInside"
+    android:scaleType="fitXY"
     />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/splash_progressbar"
+        android:visibility="invisible"
+        />
 </RelativeLayout>

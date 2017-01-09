@@ -10,6 +10,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +39,7 @@ import top.a5focus.www.ideasaver.adapter.IdeaRecyclerAdapter;
 import top.a5focus.www.ideasaver.db.Idea;
 import top.a5focus.www.ideasaver.util.HttpUtil;
 
-public class IdeasActivity extends AppCompatActivity {
+public class IdeasActivity extends AppCompatActivity  {
     private DrawerLayout ideaDrawerLayout;
     private Toolbar ideaToolbar;
     private NavigationView ideaNav;
@@ -45,9 +47,11 @@ public class IdeasActivity extends AppCompatActivity {
     private TextView userTelText;
     private TextView userNameText;
     private String userID;
-
+private ProgressBar ideas_Progressbar;
     private FloatingActionButton addIdeasFAB;
     private RecyclerView recyclerideas;
+    private SwipeRefreshLayout mIdeaSwipeRefreshLayout;
+
     private  List<Idea> mIdeas=new ArrayList<Idea>();
 
     @Override
@@ -79,9 +83,18 @@ public class IdeasActivity extends AppCompatActivity {
         ideaNav = (NavigationView) findViewById(R.id.idea_nav);
         addIdeasFAB=(FloatingActionButton)findViewById(R.id.fab_addidea);
         recyclerideas=(RecyclerView)findViewById(R.id.recycler_ideas);
+        mIdeaSwipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.idea_swipeRefrshLayout);
+        ideas_Progressbar=(ProgressBar)findViewById(R.id.ideas_Progressbar);
 
 
-
+        mIdeaSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                requestIdeas();
+                mIdeaSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
+        mIdeaSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_light,android.R.color.holo_red_light,android.R.color.holo_orange_light,android.R.color.holo_green_light);
 
 
         View headerlayout = ideaNav.getHeaderView(0);
@@ -110,7 +123,20 @@ public class IdeasActivity extends AppCompatActivity {
         ideaNav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                ideaDrawerLayout.closeDrawers();
+
+                switch (item.getItemId()){
+
+                    case R.id.project_lsit_menu:
+                        Intent intent=new Intent(IdeasActivity.this,ProjectsActivity.class);
+                        startActivity(intent);
+                        ideaDrawerLayout.closeDrawers();
+                        break;
+                    default:
+                        ideaDrawerLayout.closeDrawers();
+                        break;
+                }
+
+
                 return true;
             }
         });
@@ -128,10 +154,7 @@ public class IdeasActivity extends AppCompatActivity {
 
     private void requestIdeas() {
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("");
-        progressDialog.setMessage("正在努力加载创意...");
-        progressDialog.setCancelable(true);
+        ideas_Progressbar.setVisibility(View.VISIBLE);
 
 
         HttpUtil.sendOkHttpRequest("Idea?userid=" + userID + "", new Callback() {
@@ -140,6 +163,8 @@ public class IdeasActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
+                        ideas_Progressbar.setVisibility(View.GONE);
                         Toast.makeText(IdeasActivity.this, "连接服务器失败", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -147,6 +172,8 @@ public class IdeasActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+
+
 
                 if (response.isSuccessful()) {
                     String responseResult = response.body().string();
@@ -158,6 +185,8 @@ public class IdeasActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+
+                            ideas_Progressbar.setVisibility(View.GONE);
 
                             LinearLayoutManager layoutManager=new LinearLayoutManager(IdeasActivity.this);
                             recyclerideas.setLayoutManager(layoutManager);
@@ -174,6 +203,8 @@ public class IdeasActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            ideas_Progressbar.setVisibility(View.GONE);
+
                             Toast.makeText(IdeasActivity.this, "查无数据..", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -184,4 +215,6 @@ public class IdeasActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

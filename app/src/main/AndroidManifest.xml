@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="用户登陆"></activity>
+            android:label="用户登陆" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".IdeasActivity" />
         <activity android:name=".SplashActivity">
@@ -26,7 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddIdeaActivity"></activity>
+        <activity android:name=".AddIdeaActivity" />
+        <activity android:name=".ProjectsActivity"></activity>
     </application>
 
 </manifest>

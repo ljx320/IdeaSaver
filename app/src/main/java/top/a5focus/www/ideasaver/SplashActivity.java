@@ -6,7 +6,9 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -26,7 +28,9 @@ import top.a5focus.www.ideasaver.util.HttpUtil;
 public class SplashActivity extends AppCompatActivity {
     private String SDCardRoot;
     private ImageView welcomeImage;
-    private ProgressDialog progressDialog;
+//    private ProgressDialog progressDialog;
+
+    private ProgressBar splash_progressbar;
 
     private  File file;
 
@@ -37,6 +41,7 @@ public class SplashActivity extends AppCompatActivity {
 
         welcomeImage = (ImageView) findViewById(R.id.welcome_img);
         SDCardRoot = getApplicationContext().getFilesDir().getAbsolutePath()+ File.separator+"hz.jpg";
+        splash_progressbar=(ProgressBar)findViewById(R.id.splash_progressbar);
 
         File file = new File(SDCardRoot);
         if (file.exists()) {
@@ -44,11 +49,13 @@ public class SplashActivity extends AppCompatActivity {
             GoToMainActivity();
         } else {
 
-            progressDialog = new ProgressDialog(SplashActivity.this);
-            progressDialog.setTitle("绚丽的欢迎界面就要出来了");
-            progressDialog.setMessage("下载中...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
+//            progressDialog = new ProgressDialog(SplashActivity.this);
+//            progressDialog.setTitle("绚丽的欢迎界面就要出来了");
+//            progressDialog.setMessage("下载中...");
+//            progressDialog.setCancelable(false);
+//            progressDialog.show();
+
+            splash_progressbar.setVisibility(View.VISIBLE);
 
 
             HttpUtil.sendOkHttpRequest("Files?fileName=hz1.jpg", new Callback() {
@@ -57,6 +64,7 @@ public class SplashActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            splash_progressbar.setVisibility(View.GONE);
                             Toast.makeText(SplashActivity.this, "连接服务器失败", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -64,6 +72,8 @@ public class SplashActivity extends AppCompatActivity {
 
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
+
+
 
                     InputStream inputStream = response.body().byteStream();
 
@@ -85,11 +95,13 @@ public class SplashActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+
+                                splash_progressbar.setVisibility(View.GONE);
                                 Glide.with(SplashActivity.this).load(SDCardRoot).into(welcomeImage);
                             }
                         });
 
-                        progressDialog.dismiss();
+
 
                         GoToMainActivity();
 
@@ -122,10 +134,13 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(it);
+                finish();
             }
         };
 
         timer.schedule(task, 1000 * 3);
+
+
 
     }
 }

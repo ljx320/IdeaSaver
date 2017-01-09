@@ -23,11 +23,15 @@ public class IdeaRecyclerAdapter extends RecyclerView.Adapter<IdeaRecyclerAdapte
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView ideaTitle;
         TextView ideaSuggestor;
+        TextView idea_location;
+        TextView idea_date;
 
         public ViewHolder(View view) {
             super(view);
             ideaTitle = (TextView) view.findViewById(R.id.idea_title);
             ideaSuggestor = (TextView) view.findViewById(R.id.idea_suggustor);
+            idea_location=(TextView)view.findViewById(R.id.idea_location);
+            idea_date=(TextView)view.findViewById(R.id.idea_date);
 
         }
 
@@ -60,5 +64,7 @@ public class IdeaRecyclerAdapter extends RecyclerView.Adapter<IdeaRecyclerAdapte
 
         holder.ideaTitle.setText(idea.getIdeaTitle());
         holder.ideaSuggestor.setText(idea.getSuggestor());
+        holder.idea_location.setText(idea.getCreateLocation());
+        holder.idea_date.setText(idea.getCreateTime());
     }
 }
